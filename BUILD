@@ -1059,6 +1059,41 @@ py_library(
     deps = ["@six_archive//:six"],
 )
 
+py_binary(
+    name = "QLearning",
+    srcs = ["python/QLearn_agent.py"],
+    main = "python/QLearn_agent.py",
+    deps = [":python_random_agent_lib"],
+)
+
+py_binary(
+    name = "QLearn_agent",
+    srcs = ["python/agent_qlearning.py"],
+    main = "python/agent_qlearning.py",
+    deps = [":python_random_agent_lib"],
+)
+
+py_binary(
+    name = "DQN_imgstk",
+    srcs = ["python/agent_dqn_imgstk.py"],
+    main = "python/agent_dqn_imgstk.py",
+    deps = [":python_random_agent_lib"],
+)
+
+py_binary(
+    name = "DQN_agent",
+    srcs = ["python/agent_dqn.py"],
+    main = "python/agent_dqn.py",
+    deps = [":python_random_agent_lib"],
+)
+
+py_binary(
+    name = "DRQN_agent",
+    srcs = ["python/agent_drqn.py"],
+    main = "python/agent_drqn.py",
+    deps = [":python_random_agent_lib"],
+)
+
 LOAD_TEST_SCRIPTS = [
     level_script[len("game_scripts/levels/"):-len(".lua")]
     for level_script in glob(

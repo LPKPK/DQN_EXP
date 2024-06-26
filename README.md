@@ -1,3 +1,15 @@
+## Train A Model
+```shell
+gym$ bazel run :DQN_imgstk -- --level_script=/home/pengk/git_ws/lab/game_scripts/levels/seekavoid_arena_01.lua   --num_steps 1000000
+```
+
+## Run A Pre-trained Model
+```shell
+gym$ bazel run :DQN_imgstk -- --level_script=/home/pengk/git_ws/lab/game_scripts/levels/seekavoid_arena_01.lua   --num_steps 3050 --Test True   --model  /home/pengk/git_ws/lab/models/lenet_4img_1000000.pt
+```
+
+
+
 # <img src="/docs/template/logo.png" alt="DeepMind Lab">
 
 *DeepMind Lab* is a 3D learning environment based on id Software's
